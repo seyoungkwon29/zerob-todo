@@ -17,7 +17,7 @@ interface CalendarState {
 
 export const useCalendarStore = create<CalendarState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       events: [],
       themes: [],
 
