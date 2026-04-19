@@ -1,7 +1,14 @@
-import { Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import TabBar from './TabBar';
 
 export default function Layout() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="min-h-screen bg-[#f5f5f7]">
       {/* iOS 상태바 영역을 가리는 고정 배경 */}
