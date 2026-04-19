@@ -275,22 +275,22 @@ export default function CalendarPage() {
                 className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
               />
             </div>
-            <div>
+            <div className="overflow-hidden">
               <label className="text-xs font-medium text-gray-500 mb-1 block">시작일</label>
               <input
                 type="date"
                 value={newEventStart}
                 onChange={(e) => setNewEventStart(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+                className="w-full max-w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400 box-border"
               />
             </div>
-            <div>
+            <div className="overflow-hidden">
               <label className="text-xs font-medium text-gray-500 mb-1 block">종료일</label>
               <input
                 type="date"
                 value={newEventEnd}
                 onChange={(e) => setNewEventEnd(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+                className="w-full max-w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400 box-border"
               />
             </div>
             <button
@@ -372,7 +372,7 @@ function Modal({ children, onClose, title }: { children: React.ReactNode; onClos
           </button>
         </div>
         <div
-          className="overflow-y-auto px-4 pb-4"
+          className="overflow-y-auto overflow-x-hidden px-4 pb-4"
           style={{ paddingBottom: 'calc(1rem + env(safe-area-inset-bottom, 16px))' }}
         >
           {children}
