@@ -59,7 +59,7 @@ export default function DailyRoutines() {
         />
         <button
           onClick={handleAdd}
-          className="bg-gray-900 text-white rounded-xl px-4 py-3 active:bg-gray-700 transition-colors"
+          className="bg-red-500 text-white rounded-xl px-4 py-3 active:bg-red-600 transition-colors"
         >
           <Plus size={20} />
         </button>

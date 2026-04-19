@@ -209,7 +209,7 @@ export default function CalendarPage() {
               setNewEventEnd(format(selectedDate, 'yyyy-MM-dd'));
             }
           }}
-          className="flex-1 bg-gray-900 rounded-xl py-2.5 text-sm font-medium text-white shadow-sm active:bg-gray-700 flex items-center justify-center gap-1.5"
+          className="flex-1 bg-red-500 rounded-xl py-2.5 text-sm font-medium text-white shadow-sm active:bg-red-600 flex items-center justify-center gap-1.5"
         >
           <Plus size={16} /> 할 일 추가
         </button>
@@ -227,7 +227,7 @@ export default function CalendarPage() {
               placeholder="테마 이름 (예: 운동, 공부)"
               className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gray-400"
             />
-            <button onClick={handleAddTheme} className="bg-gray-900 text-white rounded-lg px-3 py-2">
+            <button onClick={handleAddTheme} className="bg-red-500 text-white rounded-lg px-3 py-2">
               <Plus size={18} />
             </button>
           </div>
@@ -295,7 +295,7 @@ export default function CalendarPage() {
             </div>
             <button
               onClick={handleAddEvent}
-              className="w-full bg-gray-900 text-white rounded-lg py-2.5 text-sm font-medium active:bg-gray-700 mt-2"
+              className="w-full bg-red-500 text-white rounded-lg py-2.5 text-sm font-medium active:bg-red-600 mt-2"
             >
               추가하기
             </button>
