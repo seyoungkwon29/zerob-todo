@@ -60,7 +60,7 @@ export default function CalendarPage() {
     );
 
   const getThemeColor = (themeId: string) =>
-    themes.find((t) => t.id === themeId)?.color || '#3b82f6';
+    themes.find((t) => t.id === themeId)?.color || '#6b7280';
 
   const handleDayClick = (date: Date) => {
     if (movingEvent) {
@@ -120,9 +120,9 @@ export default function CalendarPage() {
       <h1 className="text-2xl font-bold text-gray-900 mb-5">달력</h1>
 
       {movingEvent && (
-        <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3 mb-4 flex items-center justify-between">
-          <span className="text-sm text-yellow-700">📌 이동할 날짜를 선택하세요</span>
-          <button onClick={() => setMovingEvent(null)} className="text-yellow-600">
+        <div className="bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 mb-4 flex items-center justify-between">
+          <span className="text-sm text-gray-700">이동할 날짜를 선택하세요</span>
+          <button onClick={() => setMovingEvent(null)} className="text-gray-500">
             <X size={18} />
           </button>
         </div>
@@ -145,7 +145,7 @@ export default function CalendarPage() {
         {/* Week Days */}
         <div className="grid grid-cols-7 border-t border-gray-100">
           {weekDays.map((d, i) => (
-            <div key={d} className={`text-center text-xs font-medium py-2 ${i === 0 ? 'text-red-400' : i === 6 ? 'text-blue-400' : 'text-gray-400'}`}>
+            <div key={d} className={`text-center text-xs font-medium py-2 ${i === 0 ? 'text-gray-500' : i === 6 ? 'text-gray-500' : 'text-gray-400'}`}>
               {d}
             </div>
           ))}
@@ -165,11 +165,11 @@ export default function CalendarPage() {
                 onClick={() => handleDayClick(d)}
                 className={`relative h-12 flex flex-col items-center justify-start pt-1.5 transition-colors ${
                   !isCurrentMonth ? 'opacity-30' : ''
-                } ${isSelected ? 'bg-blue-50' : ''}`}
+                } ${isSelected ? 'bg-gray-100' : ''}`}
               >
                 <span
                   className={`text-xs w-6 h-6 flex items-center justify-center rounded-full ${
-                    isToday ? 'bg-blue-500 text-white font-bold' : 'text-gray-700'
+                    isToday ? 'bg-gray-900 text-white font-bold' : 'text-gray-700'
                   }`}
                 >
                   {format(d, 'd')}
@@ -209,7 +209,7 @@ export default function CalendarPage() {
               setNewEventEnd(format(selectedDate, 'yyyy-MM-dd'));
             }
           }}
-          className="flex-1 bg-blue-500 rounded-xl py-2.5 text-sm font-medium text-white shadow-sm active:bg-blue-600 flex items-center justify-center gap-1.5"
+          className="flex-1 bg-gray-900 rounded-xl py-2.5 text-sm font-medium text-white shadow-sm active:bg-gray-700 flex items-center justify-center gap-1.5"
         >
           <Plus size={16} /> 할 일 추가
         </button>
@@ -225,9 +225,9 @@ export default function CalendarPage() {
               onChange={(e) => setNewThemeName(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleAddTheme()}
               placeholder="테마 이름 (예: 운동, 공부)"
-              className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+              className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gray-400"
             />
-            <button onClick={handleAddTheme} className="bg-blue-500 text-white rounded-lg px-3 py-2">
+            <button onClick={handleAddTheme} className="bg-gray-900 text-white rounded-lg px-3 py-2">
               <Plus size={18} />
             </button>
           </div>
@@ -238,7 +238,7 @@ export default function CalendarPage() {
                   <div className="w-3 h-3 rounded-full" style={{ backgroundColor: theme.color }} />
                   <span className="text-sm">{theme.name}</span>
                 </div>
-                <button onClick={() => removeTheme(theme.id)} className="text-gray-400 active:text-red-500">
+                <button onClick={() => removeTheme(theme.id)} className="text-gray-400 active:text-gray-600">
                   <Trash2 size={16} />
                 </button>
               </div>
@@ -257,7 +257,7 @@ export default function CalendarPage() {
               <select
                 value={newEventTheme}
                 onChange={(e) => setNewEventTheme(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400 bg-white"
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gray-400 bg-white"
               >
                 <option value="">테마 선택</option>
                 {themes.map((t) => (
@@ -272,7 +272,7 @@ export default function CalendarPage() {
                 value={newEventTitle}
                 onChange={(e) => setNewEventTitle(e.target.value)}
                 placeholder="할 일을 입력하세요"
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gray-400"
               />
             </div>
             <div className="overflow-hidden">
@@ -281,7 +281,7 @@ export default function CalendarPage() {
                 type="date"
                 value={newEventStart}
                 onChange={(e) => setNewEventStart(e.target.value)}
-                className="w-full max-w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400 box-border"
+                className="w-full max-w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gray-400 box-border"
               />
             </div>
             <div className="overflow-hidden">
@@ -290,12 +290,12 @@ export default function CalendarPage() {
                 type="date"
                 value={newEventEnd}
                 onChange={(e) => setNewEventEnd(e.target.value)}
-                className="w-full max-w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400 box-border"
+                className="w-full max-w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gray-400 box-border"
               />
             </div>
             <button
               onClick={handleAddEvent}
-              className="w-full bg-blue-500 text-white rounded-lg py-2.5 text-sm font-medium active:bg-blue-600 mt-2"
+              className="w-full bg-gray-900 text-white rounded-lg py-2.5 text-sm font-medium active:bg-gray-700 mt-2"
             >
               추가하기
             </button>
@@ -328,7 +328,7 @@ export default function CalendarPage() {
                   <button
                     onClick={() => toggleEvent(event.id)}
                     className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${
-                      event.completed ? 'bg-blue-500 border-blue-500' : 'border-gray-300'
+                      event.completed ? 'bg-gray-900 border-gray-900' : 'border-gray-300'
                     }`}
                   >
                     {event.completed && <Check size={12} className="text-white" />}
@@ -343,7 +343,7 @@ export default function CalendarPage() {
                   </div>
                   <div className="flex items-center gap-1">
                     <GripVertical size={14} className="text-gray-300" />
-                    <button onClick={() => removeEvent(event.id)} className="text-gray-300 active:text-red-400 p-1">
+                    <button onClick={() => removeEvent(event.id)} className="text-gray-300 active:text-gray-600 p-1">
                       <Trash2 size={14} />
                     </button>
                   </div>

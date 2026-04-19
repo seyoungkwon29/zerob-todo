@@ -24,17 +24,17 @@ export default function DailyRoutines() {
   return (
     <div className="px-4 pt-6">
       <h1 className="text-2xl font-bold text-gray-900 mb-1">매일 할 일</h1>
-      <p className="text-sm text-gray-500 mb-5">오늘도 화이팅! 🔥</p>
+      <p className="text-sm text-gray-500 mb-5">오늘도 화이팅!</p>
 
       {/* Progress */}
       <div className="bg-white rounded-2xl p-4 mb-5 shadow-sm">
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm font-medium text-gray-600">오늘의 진척도</span>
-          <span className="text-2xl font-bold text-blue-500">{progress}%</span>
+          <span className="text-2xl font-bold text-gray-900">{progress}%</span>
         </div>
         <div className="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
           <div
-            className="bg-blue-500 h-full rounded-full transition-all duration-500 ease-out"
+            className="bg-gray-800 h-full rounded-full transition-all duration-500 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -42,7 +42,7 @@ export default function DailyRoutines() {
           {total === 0
             ? '할 일을 추가해보세요'
             : completedCount === total
-              ? '모든 루틴을 완료했어요! 🎉'
+              ? '모든 루틴을 완료했어요!'
               : `${completedCount}/${total} 완료`}
         </p>
       </div>
@@ -55,11 +55,11 @@ export default function DailyRoutines() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
           placeholder="새로운 루틴 추가..."
-          className="flex-1 bg-white rounded-xl px-4 py-3 text-sm border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
+          className="flex-1 bg-white rounded-xl px-4 py-3 text-sm border border-gray-200 focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
         />
         <button
           onClick={handleAdd}
-          className="bg-blue-500 text-white rounded-xl px-4 py-3 active:bg-blue-600 transition-colors"
+          className="bg-gray-900 text-white rounded-xl px-4 py-3 active:bg-gray-700 transition-colors"
         >
           <Plus size={20} />
         </button>
@@ -76,7 +76,7 @@ export default function DailyRoutines() {
               onClick={() => toggleRoutine(routine.id)}
               className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
                 routine.completed
-                  ? 'bg-blue-500 border-blue-500'
+                  ? 'bg-gray-900 border-gray-900'
                   : 'border-gray-300'
               }`}
             >
@@ -91,7 +91,7 @@ export default function DailyRoutines() {
             </span>
             <button
               onClick={() => removeRoutine(routine.id)}
-              className="text-gray-300 active:text-red-400 transition-colors p-1"
+              className="text-gray-300 active:text-gray-600 transition-colors p-1"
             >
               <Trash2 size={16} />
             </button>

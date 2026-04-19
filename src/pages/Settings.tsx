@@ -28,7 +28,7 @@ export default function Settings() {
 
       {/* Update Log */}
       <Section title="업데이트 기록">
-        <UpdateRow version="1.0.0" date="2026.04.18" description="첫 번째 릴리즈 🎉" />
+        <UpdateRow version="1.0.0" date="2026.04.18" description="첫 번째 릴리즈" />
       </Section>
 
       {/* Tech Stack */}
@@ -38,7 +38,7 @@ export default function Settings() {
             {['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Zustand', 'date-fns', 'PWA'].map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium"
+                className="px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium"
               >
                 {tech}
               </span>
@@ -64,7 +64,7 @@ export default function Settings() {
       </Section>
 
       <p className="text-center text-xs text-gray-400 mt-6 mb-4">
-        Made with ❤️ for personal productivity
+        Made for personal productivity
       </p>
     </div>
   );

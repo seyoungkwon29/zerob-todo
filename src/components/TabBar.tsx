@@ -22,7 +22,7 @@ export default function TabBar() {
               key={tab.path}
               onClick={() => navigate(tab.path)}
               className={`flex flex-col items-center gap-0.5 px-4 py-1 transition-colors ${
-                active ? 'text-blue-500' : 'text-gray-400'
+                active ? 'text-gray-900' : 'text-gray-400'
               }`}
             >
               <tab.icon size={22} strokeWidth={active ? 2.5 : 1.8} />

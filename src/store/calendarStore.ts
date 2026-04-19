@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { CalendarEvent, ThemeGroup } from '../types';
 
-const DEFAULT_COLORS = ['#3b82f6', '#ef4444', '#22c55e', '#f59e0b', '#8b5cf6', '#ec4899', '#06b6d4'];
+const DEFAULT_COLORS = ['#111827', '#4b5563', '#9ca3af', '#374151', '#6b7280', '#d1d5db', '#1f2937'];
 
 interface CalendarState {
   events: CalendarEvent[];
