@@ -362,7 +362,7 @@ function Modal({ children, onClose, title }: { children: React.ReactNode; onClos
     <div className="fixed inset-0 z-50 flex items-end justify-center" onClick={onClose}>
       <div className="absolute inset-0 bg-black/30" />
       <div
-        className="relative bg-white rounded-t-2xl w-full max-w-lg max-h-[80vh] flex flex-col"
+        className="relative bg-white rounded-t-2xl w-full max-w-lg max-h-[85vh] flex flex-col mb-[calc(3.5rem+env(safe-area-inset-bottom,0px))]"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 pb-2 shrink-0">
