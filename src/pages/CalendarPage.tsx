@@ -281,7 +281,7 @@ export default function CalendarPage() {
                 type="date"
                 value={newEventStart}
                 onChange={(e) => setNewEventStart(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-blue-400"
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
               />
             </div>
             <div>
@@ -290,7 +290,7 @@ export default function CalendarPage() {
                 type="date"
                 value={newEventEnd}
                 onChange={(e) => setNewEventEnd(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-blue-400"
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
               />
             </div>
             <button
