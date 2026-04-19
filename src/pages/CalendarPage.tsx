@@ -275,25 +275,23 @@ export default function CalendarPage() {
                 className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
               />
             </div>
-            <div className="grid grid-cols-2 gap-2">
-              <div>
-                <label className="text-xs font-medium text-gray-500 mb-1 block">시작일</label>
-                <input
-                  type="date"
-                  value={newEventStart}
-                  onChange={(e) => setNewEventStart(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
-                />
-              </div>
-              <div>
-                <label className="text-xs font-medium text-gray-500 mb-1 block">종료일</label>
-                <input
-                  type="date"
-                  value={newEventEnd}
-                  onChange={(e) => setNewEventEnd(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
-                />
-              </div>
+            <div>
+              <label className="text-xs font-medium text-gray-500 mb-1 block">시작일</label>
+              <input
+                type="date"
+                value={newEventStart}
+                onChange={(e) => setNewEventStart(e.target.value)}
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-blue-400"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-medium text-gray-500 mb-1 block">종료일</label>
+              <input
+                type="date"
+                value={newEventEnd}
+                onChange={(e) => setNewEventEnd(e.target.value)}
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-blue-400"
+              />
             </div>
             <button
               onClick={handleAddEvent}
@@ -364,16 +362,21 @@ function Modal({ children, onClose, title }: { children: React.ReactNode; onClos
     <div className="fixed inset-0 z-50 flex items-end justify-center" onClick={onClose}>
       <div className="absolute inset-0 bg-black/30" />
       <div
-        className="relative bg-white rounded-t-2xl w-full max-w-lg p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] animate-slide-up"
+        className="relative bg-white rounded-t-2xl w-full max-w-lg max-h-[80vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between p-4 pb-2 shrink-0">
           <h3 className="text-base font-semibold text-gray-900">{title}</h3>
           <button onClick={onClose} className="text-gray-400">
             <X size={20} />
           </button>
         </div>
-        {children}
+        <div
+          className="overflow-y-auto px-4 pb-4"
+          style={{ paddingBottom: 'calc(1rem + env(safe-area-inset-bottom, 16px))' }}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
